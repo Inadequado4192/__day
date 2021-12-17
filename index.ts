@@ -1,5 +1,3 @@
-
-
 let _init = false;
 function init() {
     _init = true;
