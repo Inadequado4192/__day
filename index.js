@@ -1,5 +1,9 @@
 "use strict";
+let _init = false;
 function init() {
+    if (_init)
+        return;
+    _init = true;
     document.querySelector("#secure")?.remove();
     const timetable = document.querySelector("#timetable");
     for (let i = 0; i <= 24; i++) {

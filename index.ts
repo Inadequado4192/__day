@@ -1,6 +1,9 @@
 
 
+let _init = false;
 function init() {
+    if (_init) return;
+    _init = true;
     (document.querySelector("#secure") as HTMLElement)?.remove();
 
     const timetable = document.querySelector("#timetable") as HTMLElement;
