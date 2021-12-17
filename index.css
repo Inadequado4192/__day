@@ -1,0 +1,67 @@
+* {
+    box-sizing : border-box;
+    font-family: monospace;
+    cursor     : default;
+}
+
+body {
+    background: #262626;
+    color     : #EEEEEE;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+#timetable {
+    position: absolute;
+    left: 40%;
+    
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+    width         : 50%;
+}
+
+#timetable>div {
+    display: flex;
+
+    width: 100%;
+    margin: 10px 0 10px 0;
+}
+
+#timetable>div .time {
+    opacity: .75;
+    font-size: 35px;
+}
+
+#timetable>div.now .time {
+    font-size: 50px;
+    text-decoration: underline;
+    opacity  : 1;
+    margin: 15px 0 15px;
+}
+
+#timetable>div .tasks {
+    display       : flex;
+    flex-direction: column;
+    padding-left  : 20px;
+    font-size: 30px;
+}
+
+#timetable>div .tasks>span {
+    padding: 5px 10px;
+    opacity: .25;
+}
+
+#timetable>div.now .tasks>span {
+    opacity: 1;
+}
+
+#timetable>div.now .tasks>span:hover {
+    background-color: rgba(255, 255, 255, .1);
+}
+
+#timetable>div[time="1"] {
+    color: red;
+}
