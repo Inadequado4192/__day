@@ -1,6 +1,6 @@
 "use strict";
 function init() {
-    document.querySelector("#secure").remove();
+    document.querySelector("#secure")?.remove();
     const timetable = document.querySelector("#timetable");
     for (let i = 0; i <= 24; i++) {
         timetable.insertAdjacentHTML("beforeend", `
@@ -37,7 +37,7 @@ function init() {
         setTimeout(loop, 1000);
     })();
 }
-document.onkeydown = e => e.ctrlKey == true && e.shiftKey == true && init();
+document.onkeydown = e => (e.ctrlKey == true && e.shiftKey == true && init(), true);
 function sendNotification(tasks) {
     const options = {
         lang: "RU",

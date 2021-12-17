@@ -1,7 +1,7 @@
 
 
 function init() {
-    (document.querySelector("#secure") as HTMLElement).remove();
+    (document.querySelector("#secure") as HTMLElement)?.remove();
 
     const timetable = document.querySelector("#timetable") as HTMLElement;
     for (let i = 0; i <= 24; i++) {
@@ -49,7 +49,7 @@ function init() {
     })();
 }
 
-document.onkeydown = e => e.ctrlKey == true && e.shiftKey == true && init();
+document.onkeydown = e => (e.ctrlKey == true && e.shiftKey == true && init(), true);
 
 
 
