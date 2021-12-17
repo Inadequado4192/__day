@@ -8,15 +8,29 @@ body {
     background: #262626;
     color     : #EEEEEE;
 }
+
 ::-webkit-scrollbar {
     display: none;
 }
 
 
+#secure {
+    position: absolute;
+    left    : 0;
+    top     : 0;
+    width   : 100%;
+    height  : 100%;
+
+    background-color: #262626;
+
+    z-index: 2;
+}
+
+
 #timetable {
     position: absolute;
-    left: 40%;
-    
+    left    : 40%;
+
     display       : flex;
     flex-direction: column;
     align-items   : center;
@@ -26,27 +40,27 @@ body {
 #timetable>div {
     display: flex;
 
-    width: 100%;
+    width : 100%;
     margin: 10px 0 10px 0;
 }
 
 #timetable>div .time {
-    opacity: .75;
+    opacity  : .75;
     font-size: 35px;
 }
 
 #timetable>div.now .time {
-    font-size: 50px;
+    font-size      : 50px;
     text-decoration: underline;
-    opacity  : 1;
-    margin: 15px 0 15px;
+    opacity        : 1;
+    margin         : 15px 0 15px;
 }
 
 #timetable>div .tasks {
     display       : flex;
     flex-direction: column;
     padding-left  : 20px;
-    font-size: 30px;
+    font-size     : 30px;
 }
 
 #timetable>div .tasks>span {

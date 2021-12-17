@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "save": "tsc && git add . && git commit -m \"first commit\" && git push -u origin main --force"
   },
   "author": "Vlad",
   "license": "ISC"
