@@ -1,8 +1,6 @@
 "use strict";
 let _init = false;
 function init() {
-    if (_init)
-        return;
     _init = true;
     document.querySelector("#secure")?.remove();
     const timetable = document.querySelector("#timetable");
@@ -41,7 +39,7 @@ function init() {
         setTimeout(loop, 1000);
     })();
 }
-document.onkeydown = e => (e.ctrlKey == true && e.shiftKey == true && init(), true);
+document.onkeydown = e => (e.ctrlKey == true && e.shiftKey == true && _init == false && init(), true);
 function sendNotification(tasks) {
     const options = {
         lang: "RU",

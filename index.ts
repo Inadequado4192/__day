@@ -2,7 +2,6 @@
 
 let _init = false;
 function init() {
-    if (_init) return;
     _init = true;
     (document.querySelector("#secure") as HTMLElement)?.remove();
 
@@ -52,7 +51,7 @@ function init() {
     })();
 }
 
-document.onkeydown = e => (e.ctrlKey == true && e.shiftKey == true && init(), true);
+document.onkeydown = e => (e.ctrlKey == true && e.shiftKey == true && _init == false && init(), true);
 
 
 
