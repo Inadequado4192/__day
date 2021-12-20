@@ -1,5 +1,7 @@
 let _init = false;
+
 function init() {
+    localStorage.open = 1;
     _init = true;
     (document.querySelector("#secure") as HTMLElement)?.remove();
 
@@ -8,7 +10,7 @@ function init() {
         timetable.insertAdjacentHTML("beforeend", `
     <div data-time="${i}">
         <span class="time">${i < 10 ? `0${i}` : i}:00</span>
-        <div class="tasks">${TIMETABLE[i as keyof typeof TIMETABLE].map((t: string) => `<span>${t}</span>`)}</div>
+        <div class="tasks">${TIMETABLE[i as keyof typeof TIMETABLE].map((t: string) => `<span>${t}</span>`).join("")}</div>
     </div>
         `);
     }
@@ -48,6 +50,7 @@ function init() {
         setTimeout(loop, 1000);
     })();
 }
++localStorage.open == 1 && init();
 
 document.onkeydown = e => (e.ctrlKey == true && e.shiftKey == true && _init == false && init(), true);
 
